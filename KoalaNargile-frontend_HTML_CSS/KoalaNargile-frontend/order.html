@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html style="height: 100%;" lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" media="mediatype and|not|only (expressions)" href="print.css">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <link rel="stylesheet" href="orderStyle.css">
+
+    <title>Order</title>
+</head>
+
+<body>
+    <nav>
+        <img onclick="location.href='index.html'" src="head.png" style="display:inline">
+        <div class="form">
+           <input type="search" placeholder="Search" >
+           <button type="submit" ><i class="fa fa-search"></i></button>
+        </div>
+        <div class="menu">
+               <a href="SignIn.html">Sign in</a>
+        <a href="register.html">Register</a>
+        <a href="index.html">Home</a> 
+        </div>
+    </nav>
+
+
+    
+
+    <div id="main">
+        <section id="menu1">
+
+            <h1>Menu</h1>
+                <h2>Make your hookah</h2>
+                <h4>Chose your hookah</h4>
+                <div onclick="narg1()" id="narga1" class="type">
+                    <p id="pstyle1" style="color: #c9c073">10 лв.</p>
+
+                </div>
+                <div onclick="narg2()" id="narga2" class="type">
+                    <p id="pstyle2" style="color: #c9c073">13 лв.</p>
+
+                </div>
+                <div onclick="narg3()" id="narga3" class="type">
+                    <p id="pstyle3" style="color: #c9c073">18 лв.</p>
+
+                </div>
+                <div onclick="narg4()" id="narga4" class="type">
+                    <p id="pstyle4" style="color: #c9c073;">15 лв.</p>
+
+                </div>
+
+                <h4>Chose taste</h4>
+                <div onclick="taste1()" id="taste1" class="type">
+                    <p id="inertaste1" style="color: #c9c073">10 лв.</p>
+
+                </div>
+                <div onclick="taste2()" id="taste2" class="type">
+                    <p id="inertaste2" style="color: #c9c073">13 лв.</p>
+                </div>
+                <div onclick="taste3()" id="taste3" class="type">
+                    <p id="inertaste3" style="color: #c9c073">18 лв.</p>
+
+                </div>
+                <div onclick="taste4()" id="taste4" class="type">
+                    <p id="inertaste4" style="color: #c9c073;">15 лв.</p>
+
+                </div>
+
+                <h4>Chose markuch</h4>
+                <div onclick="hose1()" id="hose1" class="type">
+                    <p id="inerhose1" style="color: #c9c073">10 лв.</p>
+
+                </div>
+                <div onclick="hose2()" id="hose2" class="type">
+                    <p id="inerhose2" style="color: #c9c073">13 лв.</p>
+
+                </div>
+                <div onclick="hose3()" id="hose3" class="type">
+                    <p id="inerhose3" style="color: #c9c073">18 лв.</p>
+
+                </div>
+                <div onclick="hose4()" id="hose4" class="type">
+                    <p id="inerhose4" style="color: #c9c073;">15 лв.</p>
+
+                </div>
+        </section>
+
+        
+
+        
+        <section id="order">
+            <h1 style="margin-bottom: +40px">Your Order</h2>
+
+            <div id="narga" class="type">
+                <p id="pout1" style="color: #c9c073;display: none;">-</p>
+
+            </div>
+            <div id="taste" class="type">
+                <p id="pout2" style="color: #c9c073;display: none;">-</p>
+
+            </div>
+            <div id="hose" class="type">
+                <p id="pout3" style="color: #c9c073;display: none;">-</p>
+
+            </div>
+
+            <p style="font-size: 20px;font-weight: bolder;color:#c9c073" id="total">Not fully ordered</p>
+            <button id="confirm" onclick="totalPrice1()">Let's go!</button>
+
+        </section>
+    </div>
+
+    <footer >
+        <h3 style="border:none;color:white">CopyRigth&copy;</h3>
+    </footer>
+<script src="script.js"></script>
+</body>
+
+</html>

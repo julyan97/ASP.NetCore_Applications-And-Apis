@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="Style2.css">
+    <link rel="stylesheet" href="regStyle.css">
+    <title>Document</title>
+</head>
+<body style="background:url(back.jpg)">
+    <nav>
+
+        <img onclick="location.href='index.html'" src="head.png" style="display:inline">
+    
+        <div class="form">
+           <input style="margin-right: 0;" type="search" placeholder="Search" >
+           <button style="width: auto; background-color: #dddddd" type="submit" ><i class="fa fa-search"></i></button>
+           
+        </div>
+    
+        <div class="menu">
+            <a href="SignIn.html">Sign in</a>
+            <a href="register.html">Register</a>
+            <a href="index.html">Home</a> 
+        </div>
+    </nav>
+
+    <form>
+     
+        <fieldset style="text-align: center">
+                <p class="reg" style="color:#c9c073">Registration</p><br>
+
+            <label style="color:#c9c073">E-mail<input style="color:#c9c073" type="email" placeholder="email"></label>
+            <label  style="color:#c9c073">UserName<input class="а" style="color:#c9c073" type="text" placeholder="username"></label>
+            <label  style="color:#c9c073">Password<input class="b" style="color:#c9c073" type="password" placeholder="password"></label>
+            <label style="color:#c9c073">Repeat Password<input class="c"  style="color:#c9c073" type="password" placeholder="repeat"></label>
+            <button>REGISTER</button>
+        </fieldset>
+   
+    </form>
+
+    <script>
+        function goToHomePage()
+        {
+            location.href="index.html";
+        }
+    </script>
+</body>
+</html>

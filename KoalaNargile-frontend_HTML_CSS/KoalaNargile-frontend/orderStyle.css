@@ -1,0 +1,295 @@
+*{
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+}
+body{
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: url("back.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; 
+}
+.form
+{
+    display: inline-block;
+    padding: 20px ;
+    overflow: hidden;
+    align-content: center;
+    padding-left:50%;
+    
+}
+.form input,button{
+    height: 30px;
+    width: auto;
+    border-radius: 15px;
+
+}
+nav img{
+    display: block;
+    float: left;
+    height: inherit;
+}
+nav{
+    position: sticky;
+    top:0;
+    padding: 0;
+    
+    background-color: black;
+    text-align : center;
+    overflow: hidden;
+    margin-top: 0px;
+    height: 70px;
+    z-index: 1;
+    
+}
+nav .menu a{
+    
+    margin-top: 17px;
+    margin-right: 5px;
+    text-align: center;
+    align-content: center;
+    padding: 5px 18px;
+    color: #c9c073;
+    text-decoration: none;
+    float: right ;
+    
+}
+.menu{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  float: right;
+  
+}
+.menu a{
+    font-size: 20px;
+    padding: 16px 23px;
+    margin-left: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#main{
+    
+    min-height: 100%;
+    display: block;
+    width: 100%;
+    margin-bottom: 100px;
+}
+section{
+   
+    text-align: center;
+    position: relative;
+    top: +30px;
+    left: +2px;;
+    width:49.5%;
+    display: inline-block;
+    min-height: 700px;
+    border-radius: 30px;
+    outline: none;
+}
+h2,h4,h1{
+    user-select: none;
+    color: #c9c073;
+    font-family: 'Courier New', Courier, monospace;
+}
+h4{
+    color: white;
+    position: relative;
+    background-image: linear-gradient(-90deg,black,rgb(255, 10, 10),black);
+    opacity:0.75;
+    width: 80%;
+    left: +10%;
+    margin-right: 0px;
+    overflow: hidden;
+}
+h1{
+    color: #585533;
+    position: relative;
+    background-image: linear-gradient(-90deg,black,rgb(253, 253, 253),black);
+    opacity:0.75;
+    width: 90%;
+    left: +5%;
+    height: 35px;
+}
+.type
+{
+user-select: none;
+display: inline-block;
+border: #c9c073 ;
+border-style: solid;
+margin: 5px;
+height: 100px;
+width: 110px;
+border-radius: 10px;
+margin-bottom: 20px;
+
+}
+.type:hover{
+    transform: scale(1.1);
+}
+.type >p
+{
+text-align: right;
+position: relative;
+text-align: center;
+top:+85px;
+
+font-weight: bold;
+}
+#order{
+    float: right;
+    position: relative;
+    
+    box-shadow: 0 0 10px  rgb(240, 240, 164);
+    left:-4px;
+}
+#menu1{
+    box-shadow: 0 0 10px  rgb(240, 240, 164);
+}
+
+#narga1
+{
+    background: url('narg1.jpg');
+}
+#narga2
+{
+    background: url('narg2.jpeg');
+}
+#narga3
+{
+    background: url('narg3.jpg');
+}
+#narga4
+{
+    background: url('narg4.jpg');
+}
+#narga1,#narga2,#narga3,#narga4
+{
+    background-size: 93%;
+    background-position:top;
+    background-repeat: no-repeat;
+}
+
+#taste1
+{
+    background: url('logo.png') no-repeat;
+}
+#taste2
+{
+    background: url('al.png') no-repeat;
+}
+#taste3
+{
+    background: url('maz.png') no-repeat;
+}
+#taste4
+{
+    background: url('hasze.png') no-repeat;
+}
+#taste1,#taste2,#taste3,#taste4
+{
+    background-size: 93%;
+    background-position:bottom;
+    background-repeat: no-repeat;
+}
+#hose1
+{
+    background: url('hose1.jpg');
+}
+#hose2
+{
+    background: url('hose2.jpg');
+}
+#hose3
+{
+    background: url('hose3.jpg');
+}
+#hose4
+{
+    background: url('hose4.jpg');
+}
+#hose1,#hose2,#hose3,#hose4
+{
+    background-size: 93%;
+    background-position:bottom;
+    background-repeat: no-repeat;
+}
+#taste,#narga,#hose{
+    transform: scale(1);
+    height:400px;;
+    width: 28.145%;
+   
+    animation-name: glow;
+    animation-duration: 2.5s;
+    animation-delay: 1s;
+    animation-direction: alternate;
+    animation-iteration-count: infinite;
+}
+@keyframes glow
+{
+    from{box-shadow: none;}
+   to{ box-shadow: 0 0 25px 5px  rgb(240, 240, 164);}
+}
+#confirm{
+    width: 80%;
+    height: 50px;
+    border: none;
+    outline: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    font-weight: bold;
+
+    margin-bottom: 3%;
+}
+#confirm:hover{
+    transform:scale(1.03);
+}
+#hose,#taste,#narga{
+    background-repeat: no-repeat;
+    background-size:100% 100%; 
+}
+h3{
+    position: relative;
+    top:20px;
+    margin: 0px;
+}
+footer{
+
+    display: block;
+    position: relative;
+    bottom: 0px;
+    background-color: black;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    height: 70px;
+    width: 100%;
+}
+
+@media  screen and (max-width:1005px){
+    section{
+
+        min-height: 1100px;
+        width: 48%;
+        left: +5px;;
+    }
+    #taste,#narga,#hose{
+        width:45%;
+    }
+}
+@media  screen and (max-width:524px){
+    section{
+
+        min-height: 1850px;
+        width: 48%;
+        left: +5px;;
+    }
+    #taste,#narga,#hose{
+        width:60%;
+    }
+}

@@ -1,0 +1,350 @@
+﻿
+@model MovieNight.Models.ModelView.RoomChatModelView
+@{
+    ViewData["Title"] = "ChatRoom";
+}
+<div class="text-center h-100">
+
+    <div class="row text-white align-text-top">
+        <div class="col-lg-12">
+            <div class="ibox float-e-margins">
+                <div class="ibox-content">
+                    <strong>Chat room:  @Model.Id </strong>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div style="margin-bottom:2.5%">
+        <input class="d-inline-block w-25" placeholder="Movie URL" type="text" id="videom" />
+        <input class="d-inline-block" type="button" id="videob" value="Start Watching" />
+    </div>
+
+    <div class="h-100">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <div class="container text-white d-inline-block align-text-top">
+            <div class="wrapper wrapper-content animated fadeInRight">
+
+                <div class="row text-white">
+                    <div class="col-lg-12">
+                        <div class="ibox chat-view">
+                            <div class="ibox-title">
+                                <small class="pull-right text-muted">Last message:  Mon Jan 26 2015 - 18:39:23</small> Chat room panel
+                            </div>
+                            <div class="ibox-content">
+                                <div class="row">
+                                    <div class="col-md-9 ">
+                                        <div class="chat-discussion" id="messagesList" style=" background: rgba(0, 0, 0, 0.3); color: white;">
+
+
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-3">
+                                        <div class="chat-users" id="users">
+
+
+                                            <div class="users-list">
+                                                <div class="chat-user">
+                                                    <img class="chat-avatar" src="https://bootdey.com/img/Content/avatar/avatar8.png" alt="">
+                                                    <div class="chat-user-name">
+                                                        <a href="#">Janet Smith</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="chat-message-form">
+                                            <div class="form-group">
+                                                <textarea class="d-inline-block form-control message-input" id="messageInput" name="message" placeholder="Enter message text and press enter"></textarea>
+                                                <input class="d-inline-block col btn-secondary btn-lg" type="button" id="sendButton" value="Send Message" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class=" text-white row d-inline-block align-text-top">
+            <div class="col-6">
+
+                <div class="mt-2" id="video" style="width: 420px; min-height:315px;padding:3%; background:rgba(0, 0, 0, 0.5);  ">
+                    <p class="text-white">The movie/video will be displayed here</p>
+                    <div id="generate">
+
+                    </div>
+                    <video width="400" id="displayvid" controls >
+                    </video>
+
+                    <button id="changeTime" class="btn btn-outline-success my-2 my-sm-0">Change Time For Every One</button>
+
+                    <button id="pausePlay" class="btn btn-outline-success my-2 my-sm-0" onclick="playPause()">Play/Pause</button>
+
+
+                </div>
+            </div>
+        </div>
+        <ul id="library" class="position-fixed align-text-top" style="background :rgba(0, 0, 0, 0.5);min-width:8%;min-height:100%;top:0;right:0  ">
+            <p class="text-white">Movies</p>
+            @foreach (var el in Model.Movies)
+            {
+                <li onclick="loadVideo('@el.Path')" class="text-white" style="cursor: pointer;">@el.Name</li>
+            }
+        </ul>
+    </div>
+
+</div>
+<script>
+
+    function appearLibrary() {
+        var el = document.getElementById('library');
+        if (el.style.display == "none")
+            el.style.display = "inline-block";
+        else
+            el.style.display = "none";
+
+    }
+</script>
+
+<style>
+
+
+    /* WRAPPERS */
+    #wrapper {
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    .wrapper {
+        padding: 0 20px;
+    }
+
+    .wrapper-content {
+        padding: 20px 10px 40px;
+    }
+
+    #page-wrapper {
+        padding: 0 15px;
+        min-height: 568px;
+        position: relative !important;
+    }
+
+    @@media (min-width: 768px) {
+        #page-wrapper {
+            position: inherit;
+            margin: 0 0 0 240px;
+            min-height: 2002px;
+        }
+    }
+
+
+    .message-input {
+        height: 90px !important;
+    }
+
+    .chat-avatar {
+        height: 36px;
+        float: left;
+        margin-right: 10px;
+    }
+
+    .chat-user-name {
+        padding: 10px;
+    }
+
+    .chat-user {
+        padding: 8px 10px;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+    }
+
+        .chat-user a {
+            color: inherit;
+        }
+
+    .chat-view {
+        z-index: 20012;
+    }
+
+    .chat-users,
+    .chat-statistic {
+        margin-left: -30px;
+    }
+
+    @@media (max-width: 992px) {
+        .chat-users,
+        .chat-statistic {
+            margin-left: 0;
+        }
+    }
+
+    .chat-view .ibox-content {
+        padding: 0;
+    }
+
+    .chat-message {
+        padding: 10px 20px;
+    }
+
+    .message-avatar {
+        height: 48px;
+        width: 48px;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 4px;
+        margin-top: 1px;
+    }
+
+    .chat-discussion .chat-message.left .message-avatar {
+        float: left;
+        margin-right: 10px;
+    }
+
+    .chat-discussion .chat-message.right .message-avatar {
+        float: right;
+        margin-left: 10px;
+    }
+
+    .message {
+        background: rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        text-align: left;
+        display: block;
+        padding: 10px 20px;
+        position: relative;
+        border-radius: 4px;
+    }
+
+    .chat-discussion .chat-message.left .message-date {
+        float: right;
+    }
+
+    .chat-discussion .chat-message.right .message-date {
+        float: left;
+    }
+
+    .chat-discussion .chat-message.left .message {
+        text-align: left;
+        margin-left: 55px;
+    }
+
+    .chat-discussion .chat-message.right .message {
+        text-align: right;
+        margin-right: 55px;
+    }
+
+    .message-date {
+        font-size: 10px;
+        color: #888888;
+    }
+
+    .message-content {
+        display: block;
+    }
+
+    .chat-discussion {
+        background: #eee;
+        padding: 15px;
+        height: 400px;
+        overflow-y: auto;
+    }
+
+    .chat-users {
+        overflow-y: auto;
+        height: 400px;
+    }
+
+    .chat-message-form .form-group {
+        margin-bottom: 0;
+    }
+
+    .ibox {
+        clear: both;
+        margin-bottom: 25px;
+        margin-top: 0;
+        padding: 0;
+    }
+
+        .ibox.collapsed .ibox-content {
+            display: none;
+        }
+
+        .ibox.collapsed .fa.fa-chevron-up:before {
+            content: "\f078";
+        }
+
+        .ibox.collapsed .fa.fa-chevron-down:before {
+            content: "\f077";
+        }
+
+        .ibox:after,
+        .ibox:before {
+            display: table;
+        }
+
+    .ibox-title {
+        -moz-border-bottom-colors: none;
+        -moz-border-left-colors: none;
+        -moz-border-right-colors: none;
+        -moz-border-top-colors: none;
+        background-color: rgba(0, 0, 0, 0.3);
+        border-color: rgba(0, 0, 0, 0.3);
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 3px 0 0;
+        color: inherit;
+        margin-bottom: 0;
+        padding: 14px 15px 7px;
+        min-height: 48px;
+    }
+
+    .ibox-content {
+        background-color: rgba(0, 0, 0, 0.3);
+        color: inherit;
+        padding: 15px 20px 20px 20px;
+        border-color: rgba(0, 0, 0, 0.3);
+        border-image: none;
+        border-style: solid solid none;
+        border-width: 1px 0;
+    }
+
+    .ibox-footer {
+        color: inherit;
+        border-top: 1px solid rgba(0, 0, 0, 0.3);
+        font-size: 90%;
+        background: rgba(0, 0, 0, 0.3);
+        padding: 10px 15px;
+    }
+
+    .message-input {
+        height: 90px !important;
+    }
+
+    .form-control, .single-line {
+        background-color: rgba(0, 0, 0, 0.3);
+        background-image: none;
+        border: 1px solid rgba(0, 0, 0, 0.3);
+        border-radius: 1px;
+        color: inherit;
+        display: block;
+        padding: 6px 12px;
+        transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+        width: 100%;
+        font-size: 14px;
+    }
+</style>
+<script>
+        var room = '@Html.Raw(Model.Id)';
+        var curuser = '@Html.Raw(User.Identity.Name)';
+        var users = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.Users));
+
+
+</script>
+
+
+<script src="~/js/signalr/dist/browser/signalr.js"></script>
+<script src="~/js/chat.js"></script>

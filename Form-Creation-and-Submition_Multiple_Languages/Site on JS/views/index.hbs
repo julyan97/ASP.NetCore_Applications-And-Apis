@@ -1,0 +1,32 @@
+﻿
+<div class="text-center">
+    <h1>{{kk}}</h1>
+    {{#if isGuz}}
+    <h1>Hi there</h1>
+    {{/if}}
+    {{#if islogged}}
+    <h1 class="display-4">Welcome: {{userName}}</h1>
+        {{#each list}}
+                    <div style='padding:20px;' class='uper'>
+                <p class='conferenceP'>Name:<br> {{this}}</p>
+                <p class='conferenceP'>Date:<br> @item.Date</p>
+                <p class='conferenceP'>Type:<br> @item.Type</p>
+                <div>
+                    <button style="margin-bottom:4%;border:none;border-radius:30%;background:rgb(226, 208, 105,0.8)" onclick="location.href='Home/Event/@item.Id'">View Form</button>
+                </div>
+
+                    <div style="border:none;border-radius:30%;background:rgb(76, 216, 94,0.8)" >Status</div>
+            </div>
+        {{/each}}
+        {{else}}
+         <div class="image-holder">
+            <img style="border-radius:12px" src="/img/unnamed.jpg" />
+        </div>
+    {{/if}}
+<br><br><br>
+</div>
+<div class="owl-carousel">
+    <div> <img src="/img/36785949430_2af1bc3eb3_b.jpg"> </div>
+    <div> <img src="/img/Sofia_University_-_FMI_2.jpg"> </div>
+    <div> <img src="/img/Sofia_University_panorama_2-1200x675.jpg"> </div>
+</div>

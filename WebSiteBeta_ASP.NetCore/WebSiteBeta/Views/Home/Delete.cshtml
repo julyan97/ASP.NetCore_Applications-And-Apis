@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model  Conference
+
+<h1>Delete</h1>
+<form asp-action="Delete" asp-controller="Home" asp-route-id="@Model.Id" method="post">
+    <label for="name">Name</label>
+    <input type="text" id="Name" value="@Model.ConferenceName" name="ConferenceName" disabled />
+    <label for="dlc">Duration</label>
+    <input type="text" id="SecondName" value="@Model.Duration" name="Duration" disabled />
+    <button type="submit">Delete</button>
+    <button class="button cancel" type="button" onclick="location.href='/'">Cancel</button>
+</form>

@@ -1,0 +1,13 @@
+﻿@model Atm
+@{
+    ViewData["Title"] = "UpdateAtm";
+}
+
+<h1>UpdateAtm</h1>
+<form class="text-center border border-light p-5" asp-action="UpdateAtm" asp-controller="Action" method="post">
+    <input readonly class="form-control mb-4" name="TID" placeholder="Name" value="@Model.TID" />
+    <input class="form-control mb-4" name="Name" placeholder="Name" value="@Model.Name" />
+    <input class="form-control mb-4" name="City" placeholder="City" value="@Model.City" />
+
+    <button class="btn btn-info btn-block my-4" type="submit">Update</button>
+</form>

@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Conference
+
+<form asp-action="Edit" asp-controller="Home" asp-route-id="@Model.Id" method="post">
+    <label for="name">Name</label>
+    <input type="text" id="Name" value="@Model.ConferenceName" name="ConferenceName"  />
+    <label for="dlc">Second Name</label>
+    <input type="text" id="SecondName" value="@Model.Duration" name="Duration"  />
+    <button type="submit">Edit</button>
+    <button class="button cancel" type="button" onclick="location.href='/'">Cancel</button>
+</form>
+

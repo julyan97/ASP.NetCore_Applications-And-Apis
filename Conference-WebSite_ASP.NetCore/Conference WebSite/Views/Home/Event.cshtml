@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Event";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Conference
+
+<section id="inerInfos">
+    <h1  style='text-align: left;  margin-left: 200px;color:rgb(7, 169, 28)'>
+        Event:<br> @Model.ConferenceName
+    </h1>
+
+    <p class='eventdes'>
+        The event will be held on:
+        <span class='desc'>@Model.Date</span> <span class='desc'>@Model.Time</span> at  <span class='desc'>@Model.Destination</span>
+        .It will continue @Model.Duration days.
+    </p>
+
+    <h1 class='eventdes' style='text-align: left;'>
+        Event description: @Model.Description
+    </h1>
+</section>

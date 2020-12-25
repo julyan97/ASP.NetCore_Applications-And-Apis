@@ -1,0 +1,59 @@
+﻿@model List<Prices>
+@{
+    ViewData["Title"] = "View";
+}
+
+<h1>Price Configuration</h1>
+
+<form class="text-center border border-light p-5" asp-action="PricesConfigAction" asp-controller="Home" method="post">
+    <input class="form-control mb-4" name="LoadingAndCounting" placeholder="load and Count" />
+    <input class="form-control mb-4" name="Transport" placeholder="Transport" />
+    <input class="form-control mb-4" name="Risk" placeholder="Risk" />
+    <input class="form-control mb-4" name="AlternativePrice" placeholder="Alternative Price" />
+
+    <button class="btn btn-info btn-block my-4" type="submit">Add</button>
+</form>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Loading&Counting</th>
+            <th scope="col">Transport</th>
+            <th scope="col">Risk</th>
+            <th scope="col">AlternativePrice</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{int counter = 0; }
+        @{
+            var list = Model;
+            list.Reverse();
+        }
+        @foreach (var price in list)
+        {
+            counter++;
+            <tr>
+                <th scope="row">@counter</th>
+                <td>@price.LoadingAndCounting</td>
+                <td>@price.Transport</td>
+                <td>@price.Risk</td>
+                <td>@price.AlternativePrice</td>
+                <td>
+                    <form style="display: inline-block;" method="post">
+                        <button asp-action="Delete" asp-controller="Action" asp-route-id="@price.ID"
+                                style="border:none;background:red;color:white">
+                            Delete
+                        </button>
+                        <button asp-action="Update" asp-controller="Action" asp-route-id="@price.ID" formmethod="get"
+                                style="border:none;background:green;color:white">
+                            Update
+                        </button>
+                    </form>
+                    
+                </td>
+            </tr>
+        }
+    </tbody>
+
+

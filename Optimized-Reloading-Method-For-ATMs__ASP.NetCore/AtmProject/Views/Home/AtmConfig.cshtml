@@ -1,0 +1,61 @@
+﻿@model List<Atm>
+@{
+    ViewData["Title"] = "AtmConfig";
+}
+
+<h1>ATM Configuration</h1>
+
+<form class="text-center border border-light p-5" asp-action="AtmConfigAction" asp-controller="Home" method="post">
+    <input class="form-control mb-4" name="TID" placeholder="TID" />
+    <input class="form-control mb-4" name="Name" placeholder="Name" />
+    <input class="form-control mb-4" name="City" placeholder="City" />
+
+    <button class="btn btn-info btn-block my-4 align-content-center" type="submit">Add</button>
+</form>
+<div  style="text-align: -webkit-center;">
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">TID</th>
+                <th scope="col">Name</th>
+                <th scope="col">City</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{int counter = 0; }
+            @{
+                var list = Model;
+                list.Reverse();
+            }
+            @foreach (var atm in list)
+            {
+                counter++;
+                <tr>
+                    <th scope="row">@counter</th>
+                    <td>@atm.TID</td>
+                    <td>@atm.Name</td>
+                    <td>@atm.City</td>
+                    <td>
+                       
+                        <form style="display:inline" class="m-3" asp-action="OnPostUploadHistory" asp-controller="Home" asp-route-id="@atm.TID"
+                              enctype="multipart/form-data" onsubmit="AJAXSubmit(this);return false;"
+                              method="post">
+
+                            <button style="border:none;background:red;color:white" asp-action="DeleteAtm" asp-controller="Action" asp-route-id="@atm.TID">Delete</button>
+                            <button style="border:none;background:green;color:white" formmethod="get" asp-action="UpdateAtm" asp-controller="Action" asp-route-id="@atm.TID">Update</button>
+
+                            <input style="background-color:mediumpurple" class="btn btn-primary" id="file" type="file" name="file" />
+                            <input style="background-color:mediumpurple" class="btn btn-primary" type="submit" value="Upload Historic Data" />
+
+                            <div style="margin-top:15px">
+                                <output name="result"></output>
+                            </div>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

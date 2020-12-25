@@ -1,0 +1,43 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var myfile = ViewData["file"] as string[];
+}
+@model List<Conference>
+    <section class="body">
+
+
+        @if (User.Identity.IsAuthenticated)
+        {
+            <div class='button'>
+                <button onclick='location.href="Home/Create"' class='b'>Create conferency</button>
+            </div>
+        }
+        else
+        {
+            <div class='button'><button onclick='location.href="Identity/Account/Login"' class='b'>LogIn</button></div><br>
+            <div class='button'><button onclick='location.href="Identity/Account/Register"' class='b'>Register</button></div>
+        }
+        
+        @foreach (var item in Model)
+        {
+
+            <div style='padding:20px;' class='uper'>
+                <p class='conferenceP'>Name:<br> @item.ConferenceName</p>
+                <p class='conferenceP'>Date:<br> @item.Date</p>
+                <p class='conferenceP'>Time:<br> @item.Time</p>
+                <div>
+                    <button style="margin-bottom:4%;border:none;border-radius:30%;background:rgb(226, 208, 105,0.8)" onclick="location.href='Home/Event/@item.Id'">See Event</button>
+                </div>
+                @if (Context.User.Identity.Name == item.User)
+                {
+                    <button style="border:none;border-radius:30%;background:rgb(76, 216, 94,0.8)" onclick="location.href='Home/Edit/@item.Id'">Edit</button>
+                    <button style="border:none;border-radius:30%;background:rgb(216, 98, 98,0.8)" onclick="location.href ='Home/Delete/@item.Id'">Delete</button>
+                }
+            </div>
+
+        }
+    </section>
+@section Scripts
+{
+
+}

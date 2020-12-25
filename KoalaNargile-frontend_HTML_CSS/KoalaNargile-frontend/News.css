@@ -1,0 +1,118 @@
+*{
+    box-sizing: border-box;
+}
+body{
+
+    
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background: url("back.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    
+    
+}
+
+.form
+{
+    display: inline-block;
+    padding: 20px ;
+    overflow: hidden;
+    align-content: center;
+    padding-left:50%;
+    
+}
+.form input,button{
+    height: 30px;
+    width: auto;
+    border-radius: 15px;
+
+}
+nav img{
+    display: block;
+    float: left;
+    height: inherit;
+}
+nav{
+    position: sticky;
+    top:0;
+    padding: 0;
+    
+    background-color: black;
+    text-align : center;
+    overflow: hidden;
+    margin-top: 0px;
+    height: 70px;
+    z-index: 1;
+    
+}
+
+nav .menu a{
+    
+    margin-top: 17px;
+    margin-right: 5px;
+    text-align: center;
+    align-content: center;
+    padding: 5px 18px;
+    color: #c9c073;
+    text-decoration: none;
+    float: right ;
+    
+}
+.menu{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  float: right;
+  
+}
+.menu a{
+    font-size: 20px;
+   
+    padding: 16px 23px;
+    margin-left: 3px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+
+
+p,h1{
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+   
+    position: relative;
+    left: 5%;
+}
+.news{
+    position: relative;
+    left: 7%;
+    width: 80%;
+}
+p{ 
+    font-size: 25px;
+    word-break: keep-all;
+}
+footer{
+
+    display: block;
+    position: relative;
+    bottom: 0px;
+    background-color: black;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    height: 70px;
+    width: 100%;
+}
+h3{
+    position: relative;
+    top:20px;
+}
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    color: #c9c073;
+    font-size: 40px;
+}

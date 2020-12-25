@@ -1,0 +1,12 @@
+file location
+replace : "firstline" with : "secondline";
+
+inputs after path:
+
+~
+Former/Former/wwwroot
+
+or
+
+Former/Former/wwwroot
+~

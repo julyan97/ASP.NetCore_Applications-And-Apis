@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <div class="center">
+        <form asp-action="Create" class="form1" method="post">
+            <h1>Create conference</h1><br />
+            <label for="">Name</label>
+            <input name="ConferenceName" type="text" required>
+
+            <label for="">Date of the event</label>
+            <input name="date" type="date" required>
+
+            <label for="">Time of the event</label>
+            <input name="time" type="time" required>
+
+            <label for="">Duration in Days</label>
+            <input name="duration" type="number" required>
+
+            <label for="">Where will it be</label><br>
+            <input name="destination" type="text" required>
+
+            <label for="">URL of the live stream</label>
+            <input name="url" type="text" required>
+
+            <label for="">Description of the event</label>
+            <textarea rows="4" cols="30" name='description'></textarea>
+
+            <input type="file" name="file" value="" multiple />
+
+            <input type="submit"> <br>
+
+        </form>
+    </div>
+

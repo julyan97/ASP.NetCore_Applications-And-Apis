@@ -1,0 +1,44 @@
+
+            <div class="required-fields-holder">
+                <p class="required-fields">* Всички полета са задължителни</p>
+            </div>
+            <div style="border-radius: 30px;" class = "form-main">    
+                    <h1 style="text-align: center; margin-bottom: 6%;margin-top: 3%;
+                    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Подаване на оплакване</h1>
+
+                    <form action = "/complaint" method = "post">
+                        <div class = "">
+                            <input type="text" name="firstName" placeholder="Име">
+                            <input type="text" name="lastName" placeholder="Фамилия">
+                        </div>
+
+                        <div class = "">
+                <select style="width: 16%;" id="fac" name="faculty"> 
+                    <option value="FMI">Факултет по математика и информатика</option>
+                    <option value="FI">Исторически факултет</option>                    
+                    <option value="FF">Философски факултет</option>
+                    <option value="FKNF">Факултет по класически и нови филологии</option>
+                    <option value="FL">Юридически факултет</option>
+                    <option value="FP">Факултет по педагогика</option>
+                    <option value="FFiz">Физически факултет</option>
+                    <option value="FHF">Факултет по химия и фармация</option>
+                    <option value="FG">Богословски факултет</option>
+                    <option value="FM">Медицински факултет</option>
+    	        </select>
+                            <input type="text" name="facultyNumber" placeholder="Факултетен номер">
+                        </div>
+
+                        <div class = "">
+                            <input type="text" name="subject" placeholder="Специалност">
+                            <input type="text" name="course" placeholder="Курс">
+                        </div>
+
+                        <div  class = "">
+                            <textarea style="width: 60%;" name = "textField" rows = "5" cols = "60" placeholder = "Текст"></textarea>
+                        </div>
+
+                        <div class="button-area">
+                            <button>Преглед</button>
+                        </div>
+                    </form>
+            </div>

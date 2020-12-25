@@ -1,0 +1,126 @@
+﻿@{
+    ViewData["Title"] = "Уверение";
+}
+
+<div class="required-fields-holder">
+    <p class="required-fields">* Всички полета са задължителни</p>
+</div>
+
+<div class="form-main">
+    <div class="title">
+        <image src="../../img/certificate.png">
+    </div>
+
+    <form action="" method="POST">
+        <div class="">
+            <input type="text" name="firstName" placeholder="Първо име">
+            <input type="text" name="middleName" placeholder="Бащино име">
+            <input type="text" name="lastName" placeholder="Фамилия">
+        </div>
+
+        <div class="">
+            <select class="" name="EGN-choise">
+                <option>ЕГН</option>
+                <option>ЛНЧ</option>
+            </select>
+            <input type="text" name="EGN">
+        </div>
+
+        <div class="">
+            <input type="text" name="city" placeholder="Местожителство">
+        </div>
+
+
+        <div class="signed">
+            <a>е записан/а през период</a>
+            <input type="text" name="startYear">
+            <a>/</a>
+            <input type="text" name="lastYear">
+            <a>в</a>
+            <select class="" name="term">
+                <option>Летен</option>
+                <option>Зимен</option>
+            </select>
+            семестър
+        </div>
+
+        <div class="">
+            <a>на</a>
+            <select type="text" name="course">
+                <option>I</option>
+                <option>II</option>
+                <option>III</option>
+                <option>IV</option>
+                <option>V</option>
+            </select>
+            <a>курс,</a>
+            <select type="text" name="studyForm">
+                <option>Редовно</option>
+                <option>Задочно</option>
+            </select>
+            <a>обучение за висше образование</a>
+        </div>
+
+        <div class="">
+            <a>на образователна-квалификационна степен</a>
+            <select type="text" name="degree">
+                <option>Бакалавър</option>
+                <option>Магистър</option>
+                <option>Доцент</option>
+                <option>Доктор</option>
+                <option>Професор</option>
+                <option>Специалист</option>
+            </select>
+        </div>
+
+        <div class="">
+            <a>по специалност</a>
+            <input type="text" name="subject">
+            <a>с факултет, номер</a>
+            <input type="text" name="subjectNumber">
+        </div>
+
+        <div class="text-area">
+            <div class="">
+                <a>Настоящето се издава в уверение на това, че</a>
+            </div>
+            <div class="">
+                <textarea name="textField" rows="5" cols="60"></textarea>
+            </div>
+        </div>
+
+        <div class="">
+            <a>Настоящето се издава да послужи пред</a>
+            <select type="text" name="reason">
+                <option>Военни власти</option>
+                <option>Дирекция "пенсионно осигуряване"</option>
+                <option>Кандидатстване за студенско общежитие</option>
+                <option>БДЖ</option>
+                <option>Държавен стаж за Министерството на правосъдието</option>
+                <option>Друго</option>
+            </select>
+        </div>
+
+        <div class="student">
+            <a>В момента съм</a>
+            <select type="text" name="studentType">
+                <option>Действащ студент</option>
+                <option>Напуснал/Завършил студент</option>
+            </select>
+            <a>облекчаващо обстоятелство</a>
+            <select type="text" name="discount">
+                <option>Няма</option>
+                <option>Кръгли сираци</option>
+                <option>Инвалиди с трайни увреждания и намалена работоспособност</option>
+                <option>Лица, пребивавали до пълнолетието си в домове за отглеждане и възпитаване на деца от системата на МОМН</option>
+                <option>Майки с три и повече деца</option>
+                <option>Студентки с деца под шестгодишна възраст</option>
+            </select>
+        </div>
+
+        <div class="button-area">
+            <button>Преглед</button>
+        </div>
+    </form>
+  
+</div>

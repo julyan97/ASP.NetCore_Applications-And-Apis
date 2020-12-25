@@ -1,0 +1,106 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="justify-content-center">
+    <form class="functions text-center" method="post" asp-action="Import" asp-controller="Home">
+        <button class="btn btn-primary m-1" asp-action="AtmConfig" asp-controller="Home">Configurate ATM </button>
+        <button class="btn btn-primary  m-1" asp-action="PricesConfig" asp-controller="Home">Configurate Prices </button>
+        <button class="btn btn-primary  m-1" asp-action="Import" asp-controller="Home" type="submit"> Import Historical Data </button>
+        <button class="btn btn-primary  m-1" asp-action="OptimalScheme" asp-controller="Home">Find Optimal Scheme</button>
+        <button class="btn btn-primary  m-1" asp-action="Show" asp-controller="Home">Graphic Visualization of Data </button>
+        <button class="btn btn-primary  m-1" asp-action="profitLoss" asp-controller="Home">Profit/Loss Calculator per Year </button>
+    </form>
+
+    <form class=" text-center m-3 " asp-action="OnPostUpload" asp-controller="Home"
+          enctype="multipart/form-data" onsubmit="AJAXSubmit(this);return false;"
+          method="post">
+        <div class="text-center w-50 ">
+            <input class="btn btn-primary" id="file" type="file" name="file" accept=".csv" />
+            <input class="btn btn-primary m-1" type="submit" value="Upload ATM CSV" />
+        </div>
+
+        <div style="margin-top:15px">
+            <output name="result"></output>
+        </div>
+    </form>
+
+    @section Scripts {
+
+
+        <script>
+            async function AJAXSubmit(oFormElement) {
+                var resultElement = oFormElement.elements.namedItem("result");
+                const formData = new FormData(oFormElement);
+
+                try {
+                    const response = await fetch(oFormElement.action, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (response.ok) {
+                        window.location.href = '/';
+                    }
+
+                    resultElement.value = 'Result: ' + response.status + ' ' +
+                        response.statusText;
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            }
+        </script>
+        
+        <script type="text/javascript">
+            
+            function Get(url) {
+                var Httpreq = new XMLHttpRequest(); // a new request
+                Httpreq.open("GET", url, false);
+                Httpreq.send(null);
+                return Httpreq.responseText;
+            }
+            var json_obj = Get('home/previousloadchart');
+            console.log(this.JSON.parse(json_obj)[0].PreviousLoad);
+            var list = [];
+            var data = this.JSON.parse(json_obj);
+            for (var i = 0; i < data.length; i++) {
+                var x = new Date(data[i].x);
+                //var x = Date.UTC.parse(data[i].x);
+                var y = data[i].y;
+                list.push({ x, y });
+                console.log({ x, y });
+            }
+            console.log(list);
+            window.onload = function () {
+
+                var chart = new CanvasJS.Chart("chartContainer",
+                    {
+                        axisY: {
+                            valueFormatString: "$######"
+                        },
+                        axisX: {
+                            ticks: {
+                                autoSkip: true,
+                                maxTicksLimit: 10
+                            }
+                        },
+                        data: [
+                            {
+                                type: "spline",
+
+                                yValueFormatString: "$######",
+                                dataPoints: this.list
+
+                            }
+                        ]
+                    });
+
+                chart.render();
+            }
+        </script>
+        <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+        <div id="chartContainer" style="height: 300px; width: 100%;">
+        </div>
+    }
+</div>
+

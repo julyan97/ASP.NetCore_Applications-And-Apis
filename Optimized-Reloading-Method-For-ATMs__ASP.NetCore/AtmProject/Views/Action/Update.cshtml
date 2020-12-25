@@ -1,0 +1,15 @@
+﻿@model Prices
+@{
+    ViewData["Title"] = "Update";
+}
+
+<h1>Update</h1>
+<form class="text-center border border-light p-5" asp-action="Update" asp-controller="Action" method="post">
+    <input class="form-control mb-4" name="LoadingAndCounting" placeholder="load and Count" value="@Model.LoadingAndCounting"  />
+    <input class="form-control mb-4" name="Transport" placeholder="Transport" value="@Model.Transport" />
+    <input class="form-control mb-4" name="Risk" placeholder="Risk" value="@Model.Risk" />
+    <input class="form-control mb-4" name="AlternativePrice" placeholder="Alternative Price" value="@Model.AlternativePrice" />
+
+    <button class="btn btn-info btn-block my-4" type="submit">Update</button>
+    <input id="File1" type="file" />
+</form>

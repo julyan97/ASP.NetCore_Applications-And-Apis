@@ -1,0 +1,46 @@
+
+form{
+
+   
+    position: fixed;
+    top: 30%;
+    left: 40%;
+    text-align: center;
+}
+.reg
+{
+    display: inline-block;
+ 
+}
+fieldset
+{
+    width: 20%;
+    border-radius: 10%;
+    border-top-left-radius: 0%;
+    border-top-right-radius: 0%;
+    border:#c9c073;
+    border-style: solid;
+   
+}
+p
+{
+    display: block;
+   font-size: 30px;
+  
+}
+input
+{
+    margin-bottom: 5%;
+    margin-right: 25px;
+    padding: 10px;
+    padding-inline-end: 50%;
+}
+button
+{
+    background:#c9c073;
+    border: black;
+    border-radius: 300%;
+    color: black;
+    width: 50%;
+}
+

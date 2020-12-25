@@ -1,0 +1,146 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+a.navbar-brand {
+  white-space: normal;
+  text-align: center;
+  word-break: break-all;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.form1 {
+    width:350px;
+    border:solid black;
+    margin-top:3%;
+    text-align: -webkit-center;
+    
+}
+input
+{
+    display:block;
+    margin-bottom:20px;
+}
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+main
+{
+}
+.box-shadow {
+  box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+  font-size: 1rem;
+  line-height: inherit;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    /* Margin bottom by footer height */
+    background: url("../img/background.png") no-repeat;
+    background-size:50%;
+    background-position-y: 80px;
+    background-position-x: 500px;
+    margin-bottom: 60px;
+}
+.center {
+    text-align: -webkit-center;
+}
+.body {
+    text-align: -webkit-center;
+    padding-top:10%;
+}
+.form1 {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.8)
+}
+.button {
+    display: block;
+    text-align: --webkit--center;
+}
+
+.b {
+    font-size: 50px;
+    background: rgba(2, 62, 99, 0.5);
+    border: none;
+    border-radius: 30px;
+}
+
+button:hover {
+    background: rgba(2, 62, 99,0.8);
+}
+.uper {
+    height:320px;
+    margin-top: 20px;
+    padding: 10px;
+    margin-right: 25px;
+    display: inline-block;
+    text-align: -webkit-center;
+    background: rgba(255, 255, 255, 0.9);
+    border: #023d62 solid;
+    border-radius: 30px;
+    width: 200px;
+    overflow: hidden;
+}
+    .uper:hover {
+        transform: scale(1.1,1.1);
+        cursor: pointer;
+    }
+.conferenceP {
+    color: #023d62;
+    font-size: 20px;
+    font-weight: bold;
+}
+#inerInfos {
+    min-height: 100%;
+    height: auto;
+    text-align: center;
+    padding-top: 70px;
+}
+.eventdes {
+    border: green solid;
+    background: rgba(255, 255, 255, 0.9);
+    display: inline-block;
+    border-radius: 30px;
+}
+
+.eventdes {
+    font-size: 40px;
+    font-weight: bolder;
+    padding: 40px;
+    color: #023d62;
+}
+h1 {
+    text-align: justify;
+    text-justify: inter-word;
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    white-space: nowrap;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    line-height: 60px; /* Vertically center the text there */
+}

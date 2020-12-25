@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <link rel="stylesheet" href="Provider.css">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <title>Provider</title>
+</head>
+
+<body>
+    
+
+    <section>
+
+      <div id="header"> <h4>Your path.</h4></div> 
+        <div id="map"></div>
+
+    <div id="pool">
+        <textarea name="orders" id="order" cols="100" rows="20">  Order for : Sofia 29A , 15:45h.</textarea>
+        <button id="confirm">Confirm</button>
+        <button id="reject">Reject</button>
+    </div>
+    </section>
+
+    <script>
+    function initMap() {
+        // The location of Sofia
+        var sofia = {lat: 42.698334, lng: 23.319941};
+        // The map, centered at Uluru
+        var map = new google.maps.Map(
+            document.getElementById('map'), {zoom:15, center: sofia});
+        // The marker, positioned at Uluru
+        var marker = new google.maps.Marker({position: sofia, map: map});
+      }
+          </script>
+          <script async defer
+          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbf50LaL77i-nm0YhyfBLaX19dvtY36rI&callback=initMap" type="text/javascript">
+          </script>
+
+    <footer >
+        <h3>CopyRigth&copy;</h3>
+    </footer>
+</body>
+</html>
